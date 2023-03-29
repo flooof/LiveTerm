@@ -6,13 +6,12 @@ import { getReadme } from '../api';
 import { getWeather } from '../api';
 
 export const projects = async (args: string[]): Promise<string> => {
-  const projects = await getProjects();
-  return projects
-    .map(
-      (repo) =>
-        `${repo.name} - <a class="text-light-blue dark:text-dark-blue underline" href="${repo.html_url}" target="_blank">${repo.html_url}</a>`,
-    )
-    .join('\n');
+  return `
+        VRC Spin Up - <a class="text-light-blue dark:text-dark-blue underline" href="https://github.com/flooof/VRC-SPIN-UP" target="_blank">https://github.com/flooof/VRC-SPIN-UP</a>
+        QMK Macro Pad - <a class="text-light-blue dark:text-dark-blue underline" href="https://github.com/flooof/qmk_firmware" target="_blank">https://github.com/flooof/qmk_firmware</a>
+        Karibiner Hotkeys - <a class="text-light-blue dark:text-dark-blue underline" href="https://github.com/flooof/karibiner-config" target="_blank">https://github.com/flooof/karibiner-config</a>
+        LiveTerm Website - <a class="text-light-blue dark:text-dark-blue underline" href="https://github.com/flooof/LiveTerm" target="_blank">https://github.com/flooof/LiveTerm</a>
+  `;
 };
 
 export const quote = async (args: string[]): Promise<string> => {
